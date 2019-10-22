@@ -27,13 +27,15 @@ alias .4='cd ../../../../'                  # Go back 4 directory levels
 alias .5='cd ../../../../../'               # Go back 5 directory levels
 alias .6='cd ../../../../../../'            # Go back 6 directory levels
 
+#--------------START EDDIE3 & EDINBURGH specific --------------
+alias eddie=ssh <USERNAME>@eddie3.ecdf.ed.ac.uk
+alias sftp-eddie=sftp <USERNAME>@eddie3.ecdf.ed.ac.uk
 
-#-------------- BLUEBEAR & BHAM specific --------------
+
+#--------------START BLUEBEAR & BHAM specific --------------
 
 # Start up an interactive job (useul for Rstudio or anything w/ X11)
 alias int-job="module load slurm-interactive; fisbatch_screen --nodes 1-1 --ntasks 4 --time 8:0:0"
-
-
 #Rough wrapper for "sbatch" to allow for quick cancellation of last job when testing
 qsub () {
         jobscript="$1"
@@ -62,3 +64,4 @@ qcancel () {
         echo "-------------------------------------------------------"
         fi
 }
+#--------------END BLUEBEAR & BHAM specific --------------
